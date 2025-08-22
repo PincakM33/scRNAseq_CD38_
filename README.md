@@ -5,33 +5,18 @@ This project analyzes publicly available single-cell RNA-seq (scRNA-seq) data fr
 
 Data set source: https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE264408
 
-Repository Structure
-├── README.md
-├── data/
-│   ├── merged_seurat_subset.rds       # Saved Seurat object
-│   ├── presto_top-10_markers.csv      # Top markers per cluster from presto
-│   ├── metadata_table.csv             # Metadata exported from Seurat
-│   └── pvalue_table.csv               # Chi-squared / Fisher test results
-├── scripts/
-│   ├── 01_data_loading_preparation.R
-│   └── 02_qc_normalization_analysis.R
-├── plots/
-│   ├── DimPlot_clusters.png
-│   ├── FeaturePlot_CD83.png
-│   └── BarPlot_CD83_fraction.png
-└── .gitignore
 
 Analysis Workflow:
 
 Data Loading and Preparation- Raw count matrices and metadata were loaded and merged into a Seurat object.
 
-QC and Normalization- Cells with low feature counts or high mitochondrial content were filtered; data were normalized for downstream analysis.
+QC and Normalisation- Cells with low feature counts or high mitochondrial content were filtered; data were normalised for downstream analysis.
 
 Clustering and Marker Identification- Seurat clustering identified 22 cell populations; presto was used to identify top markers per cluster.
 
 CD83 Analysis- CD83 expression was quantified across cell types and conditions; statistical tests (Chi-squared and Fisher’s Exact Test) were performed to evaluate differences.
 
-Visualization- DimPlots, FeaturePlots, and bar plots illustrate cell type distribution and CD83+ fraction.
+Visualisation- DimPlots, FeaturePlots, and bar plots illustrate cell type distribution and CD83+ fraction.
 
 Reproducibility
 
